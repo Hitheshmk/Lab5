@@ -1,0 +1,20 @@
+#include <graphics.h>
+#include <conio.h>
+#include <stdlib.h>
+int main()
+{
+ int gd = DETECT, gm;
+ initgraph(&gd, &gm, (char*)"");
+ int x1 = 100, y1 = 100;
+ int x2 = 300, y2 = 200;
+ int dx = x2 - x1;
+ int dy = y2 - y1;
+ int p = 2 * dy - dx;
+ int x = x1, y = y1;
+ while (x <= x2)
+ {
+ putpixel(x, y, GREEN);
+ if (p < 0)
+ {
+ p = p + 2 * dy;
+ }

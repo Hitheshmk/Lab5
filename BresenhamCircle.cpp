@@ -1,0 +1,25 @@
+#include <graphics.h>
+#include <conio.h>
+int main()
+{
+ int gd = DETECT, gm;
+ initgraph(&gd, &gm, (char*)"");
+ int xc = 250, yc = 250;
+ int r = 100;
+ int x = 0;
+ int y = r;
+ int p = 3 - 2 * r;
+ while (x <= y)
+ {
+ putpixel(xc + x, yc + y, BLUE);
+ putpixel(xc - x, yc + y, BLUE);
+ putpixel(xc + x, yc - y, BLUE);
+ putpixel(xc - x, yc - y, BLUE);
+ putpixel(xc + y, yc + x, BLUE);
+ putpixel(xc - y, yc + x, BLUE);
+ putpixel(xc + y, yc - x, BLUE);
+ putpixel(xc - y, yc - x, BLUE);
+ if (p < 0)
+ {
+ p = p + 4 * x + 6;
+ }
